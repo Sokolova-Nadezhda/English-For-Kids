@@ -1,5 +1,5 @@
 
-let switcher = document.getElementsByClassName('train')[0];
+let switcher = document.getElementsByClassName('switch_slider')[0];
 
 switcher.addEventListener('click', () => {
     switcher.classList.toggle('train');
@@ -58,10 +58,14 @@ switcher.addEventListener('click', () => {
                                 e.target.parentNode.getElementsByClassName('play_image')[0].classList.add('disabled');
                                 setTimeout(() => {word = VoicingWords(wordsForGame)}, 1200); 
                                 endGameCounter -= 1;
+
+                                writingToLocalStorage(word, 'correct');
                             } else {
                                 let audioFail = new Audio('assets/audio/fail.mp3');
                                 audioFail.play();
                                 fail = createMarker(false);
+
+                                writingToLocalStorage(word, 'incorrect');
                             }
                         }
                     } 
@@ -132,6 +136,39 @@ function createMarker(resultGame) {
     }
 
     return fail;
+}
+
+var statsStorage = window.localStorage;
+
+
+var initStatsStorage = function() {
+    for (let category in wordsForStats) {
+        for (word of wordsForStats[category]) {
+            let key_storage_correct = `${word.name}.correct`;
+            let key_storage_incorrect = `${word.name}.incorrect`;
+            let key_storage_trained = `${word.name}.trained`;
+
+            if (statsStorage.getItem(key_storage_correct) == null) {
+                statsStorage.setItem(key_storage_correct, 0);
+            }
+
+            if (statsStorage.getItem(key_storage_incorrect) == null) {
+                statsStorage.setItem(key_storage_incorrect, 0);
+            }
+            
+            if (statsStorage.getItem(key_storage_trained) == null) {
+                statsStorage.setItem(key_storage_trained, 0);
+            }
+        }
+    }
+}
+
+initStatsStorage();
+
+var writingToLocalStorage = function(word_name, column_name) {
+    let key_storage = `${word_name}.${column_name}`;
+    let value = statsStorage.getItem(key_storage);
+    statsStorage.setItem(key_storage, Number(value) + 1);
 }
 
 
