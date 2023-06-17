@@ -1,6 +1,6 @@
 
 import { wordsForStats } from './init_word_cards.js';
-import { statsStorage as statsStorage } from './vars.js';
+import { statsStorage as statsStorage, switcher } from './vars.js';
 import { createCards } from './create_cards_function.js';
 import { initStatsStorage } from './writing_to_local_storage.js';
 
@@ -59,7 +59,15 @@ var sortTable = function(arr_rows, th_number) {
 let stats_button = document.getElementsByClassName('btn_stats')[0];
 
 stats_button.addEventListener('click', () => {
-    var switcher = document.getElementsByClassName('switch_slider')[0];
+
+    if (switcher.classList.contains('play')) {
+        switcher.classList.remove('play');
+        switcher.classList.add('train');
+    }
+
+    repeat.setAttribute('disabled', 'true');
+    start.setAttribute('disabled', 'true');
+    stats_markers.innerHTML = '';
 
     switcher.previousElementSibling.checked = false;
     document.getElementsByClassName('buttons_and_markers_wrapper')[0].classList.remove('block');

@@ -1,6 +1,6 @@
 
 import { writingToLocalStorage } from './writing_to_local_storage.js';
-import { cardsContainer } from './vars.js';
+import { cardsContainer, enVoice} from './vars.js';
 
 // создание карточки
 
@@ -72,39 +72,32 @@ export function createCards(arr) {
         });
     
         let frontSides = document.querySelectorAll('.front');
-    
-        window.speechSynthesis.onvoiceschanged = function () {
-    
-            var enVoice = (function () {
-                let reactivate = window.speechSynthesis.getVoices();
-                return reactivate.filter(function (elem) { return elem.lang == "en-US" })[0];
-            }) ();
-    
-            frontSides.forEach((card) => {
-    
-                let VoicingWords = function (e) {
-                    let text = e.target.parentNode.getElementsByClassName('category_name')[0].innerHTML;
-                    let utterance = new SpeechSynthesisUtterance(text);
-    
-                    utterance.voice = enVoice;
-    
-                    if (document.getElementsByClassName('train')[0]) {
-                        window.speechSynthesis.speak(utterance);
-                        writingToLocalStorage(text, 'trained');
-                    }
+
+        frontSides.forEach((card) => {
+
+            let VoicingWords = function (e) {
+                let text = e.target.closest('.front').getElementsByClassName('category_name')[0].innerHTML;
+                let utterance = new SpeechSynthesisUtterance(text);
+
+                utterance.voice = enVoice;
+
+                if (document.getElementsByClassName('train')[0]) {
+                    window.speechSynthesis.speak(utterance);
+                    writingToLocalStorage(text, 'trained');
                 }
-    
-                card.addEventListener('click', VoicingWords)
-    
-                if (document.getElementsByClassName('play')[0]) {
-                    card.getElementsByClassName('category_name')[0].classList.add('play_card');
-                    card.getElementsByClassName('flip_button')[0].classList.add('play_card');
-                    card.getElementsByClassName('image')[0].classList.add('play_image');
-                }
-    
-            })
-        }
-    
+            }
+
+            card.addEventListener('click', VoicingWords)
+
+            if (document.getElementsByClassName('play')[0]) {
+                card.getElementsByClassName('category_name')[0].classList.add('play_card');
+                card.getElementsByClassName('flip_button')[0].classList.add('play_card');
+                card.getElementsByClassName('image')[0].classList.add('play_image');
+                start.removeAttribute('disabled');
+            }
+
+        })
+
         let backSides = document.querySelectorAll('.back');
         backSides.forEach((card) => {
             card.addEventListener('mouseleave', (e) => {
@@ -112,7 +105,7 @@ export function createCards(arr) {
             })
     
         })
-    
+
         if (document.getElementsByClassName('buttons_container')[0]) {
             start.removeAttribute('disabled');
         }

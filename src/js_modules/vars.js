@@ -5,4 +5,11 @@ var statsStorage = window.localStorage;
 
 var switcher = document.getElementsByClassName('switch_slider')[0];
 
-export {cardsContainer, statsStorage, switcher }
+var enVoice; 
+    
+window.speechSynthesis.onvoiceschanged = function () {
+        let reactivate = window.speechSynthesis.getVoices();
+        enVoice = reactivate.filter(function (elem) { return elem.lang == "en-US" })[0];
+}
+
+export {cardsContainer, statsStorage, switcher, enVoice }

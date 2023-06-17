@@ -18,13 +18,13 @@ switcher.addEventListener('click', () => {
     let buttons = document.getElementsByClassName('buttons_and_markers_wrapper')[0];
     buttons.classList.toggle('block');
 
-    if ((switcher.classList.contains('play')) && (!repeat.hasAttribute('disabled')) && (!cardsContainer.firstElementChild.classList.contains('table_wrapper'))) {
+    if ((switcher.classList.contains('play'))&&(!repeat.hasAttribute('disabled'))) {
         repeat.setAttribute('disabled', 'true');
         start.removeAttribute('disabled');
     }
 
     if (switcher.classList.contains('train')) {
-        document.querySelectorAll('.disabled').forEach((elem) => { elem.classList.remove('disabled') })
+        document.querySelectorAll('.disabled').forEach((elem) => {elem.classList.remove('disabled')})
         stats_markers.innerHTML = '';
     }
 

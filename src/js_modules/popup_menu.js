@@ -63,6 +63,9 @@ function removeActive() {  // Функция для снятия активны�
     closePopupButton.style.display = 'none';
 
     closePopupButton.classList.remove('show_animation');
-    document.getElementsByClassName('animated-icon open')[0].classList.remove('open');
+    let icon_open = document.getElementsByClassName('animated-icon open')[0];
+    if (icon_open) {
+        icon_open.classList.remove('open');
+    }
 }
 

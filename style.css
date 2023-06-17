@@ -529,7 +529,7 @@ button {
 #end_game {
     position: absolute;
     left: 50%;
-    top: 55%;                        
+    top: 50%;                        
     transform: translate(-50%, -50%);
 
     height: 500px;
@@ -772,5 +772,24 @@ table th.sort_arrow_down::after {
 
     .cards_container {
         align-content: center;
+    }
+
+    .buttons_and_markers { 
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .buttons_container { 
+        align-self: center;
+    }
+    
+    #stats_markers {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #end_game {            
+        height: 300px;
+        width: 300px;
     }
 }

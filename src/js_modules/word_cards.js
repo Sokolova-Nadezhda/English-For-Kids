@@ -17,7 +17,8 @@ import { createCards } from './create_cards_function.js';
 
 let cardsCategories = document.querySelectorAll('.front');
 
-let navCategories = document.querySelectorAll('.category_nav');
+let navCategories = [...document.querySelectorAll('.category_nav')];
+navCategories.shift();
 
 let allCategories = [...cardsCategories, ...navCategories];
 
@@ -32,7 +33,7 @@ allCategories.forEach((card) => {
         }
 
         if (e.target.closest('.category_nav')) {
-            idCategoryCard = e.target.parentNode.getElementsByTagName('img')[0].alt;
+            idCategoryCard = e.target.closest('.category_nav').getElementsByTagName('img')[0].alt;
         }
 
         let wordCards;
