@@ -1,0 +1,85 @@
+
+.table_wrapper {
+    width: 100%;
+    overflow: auto;
+    text-align: center;
+}
+
+.table_wrapper table {
+    flex-direction: column;
+	width: 100%;
+	overflow-x: auto;
+	white-space: nowrap;
+    color: white !important;
+}
+
+.btn_stats:disabled {
+    background:  #818181;
+    box-shadow: 0px 4px 0px #464545;
+}
+
+.stats_buttons {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 20px;
+    align-self: flex-end;
+}
+
+.stats_buttons button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 19px;
+    text-transform: uppercase;
+    user-select: none;   
+
+    color: #ffffff;
+    box-shadow: 0px 4px 0px #473bb3;
+}
+
+.stats_buttons button:active {
+    box-shadow: 0px 1px 0px #473bb3;
+}
+
+#difficult_words {
+    background-color: #ffc116;
+}
+
+#difficult_words:hover {
+    background-color: #f5bb1d;
+}
+
+#difficult_words:active {
+    background: #ffcd42;
+}
+
+#reset {
+    background-color: #ff5151;
+}
+
+#reset:hover {
+    background-color: #e63b3b;
+}
+
+#reset:active {
+    background-color: #fa6c6c;
+}
+
+table th {
+    user-select: none;   
+}
+
+table th:hover {
+    cursor: pointer;
+    background-color: #fad673ab;
+}
+
+table th.sort_arrow_up::after {
+    font-size: 0.9rem;
+    content: '▲';
+}
+
+table th.sort_arrow_down::after {
+    font-size: 0.9rem;
+    content: '▼';
+}
