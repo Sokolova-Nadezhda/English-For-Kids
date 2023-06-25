@@ -15,14 +15,14 @@ import { createCards } from './create_cards_function.js';
 // расстановка карточек
 
 
-let cardsCategories = document.querySelectorAll('.front');
+const cardsCategories = document.querySelectorAll('.front');
 
-let navCategories = [...document.querySelectorAll('.category_nav')];
+const navCategories = [...document.querySelectorAll('.category_nav')];
 navCategories.shift();
 
-let allCategories = [...cardsCategories, ...navCategories];
+const allCategories = [...cardsCategories, ...navCategories];
 
-var functionCreateCards = createCards;
+const functionCreateCards = createCards;
 
 allCategories.forEach((card) => {
     card.addEventListener('click', (e) => {
@@ -54,18 +54,3 @@ allCategories.forEach((card) => {
         functionCreateCards(wordCards);
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

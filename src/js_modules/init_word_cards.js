@@ -1,5 +1,5 @@
 
-var generateCardObject = function(id, img, name, translate) {
+const generateCardObject = function(id, img, name, translate) {
     return {
         id: id,
         img: img,
@@ -8,7 +8,7 @@ var generateCardObject = function(id, img, name, translate) {
     }
 }
 
-var InitFruitsCard = function() {
+const InitFruitsCard = function() {
 
     let Orange = generateCardObject('orange', 'assets/img/fruits/orange.png', 'Orange', 'Aпельсин')
 
@@ -29,7 +29,7 @@ var InitFruitsCard = function() {
     return [Orange, Banana, Lemon, Apple, Pear, Peach, Pineapple, Grapes]
 }
 
-var InitAnimalCard = function() {
+const InitAnimalCard = function() {
 
     let Cow = generateCardObject('cow', 'assets/img/animals/cow.png', 'Cow', 'Корова')
 
@@ -50,7 +50,7 @@ var InitAnimalCard = function() {
     return [Cow, Crocodile, Giraffe, Goat, Bear, Pig, Horse, Fox]
 }
 
-var InitHouseCard = function() {
+const InitHouseCard = function() {
 
     let Bedroom = generateCardObject('bedroom', 'assets/img/house/bedroom.png', 'Bedroom', 'Спальня')
 
@@ -71,7 +71,7 @@ var InitHouseCard = function() {
     return [Bedroom, Kitchen, Bed, Chair, Sofa, Fridge, Window, Mirror]
 }
 
-var InitWeatherCard = function() {
+const InitWeatherCard = function() {
 
     let Rain = generateCardObject('rain', 'assets/img/weather/rain.png', 'Rain', 'Дождь')
 
@@ -92,7 +92,7 @@ var InitWeatherCard = function() {
     return [Rain, Snow, Cloud, Wind, Fog, Cold, Hot, Sun]
 }
 
-var InitFoodCard = function() {
+const InitFoodCard = function() {
 
     let Bread = generateCardObject('bread', 'assets/img/food/bread.png', 'Bread', 'Хлеб')
 
@@ -113,7 +113,7 @@ var InitFoodCard = function() {
     return [Bread, Cheese, Eggs, Meat, Butter, Sugar, Salt, Yogurt]
 }
 
-var InitVegetablesCard = function() {
+const InitVegetablesCard = function() {
 
     let Potato = generateCardObject('potato', 'assets/img/vegetables/potato.png', 'Potato', 'Картофель')
 
@@ -134,7 +134,7 @@ var InitVegetablesCard = function() {
     return [Potato, Carrot, Onion, Garlic, Cucumber, Tomato, Cabbage, Pepper]
 }
 
-var InitNatureCard = function() {
+const InitNatureCard = function() {
 
     let Field = generateCardObject('field', 'assets/img/nature/field.png', 'Field', 'Поле')
 
@@ -155,7 +155,7 @@ var InitNatureCard = function() {
     return [Field, Rainbow, Forest, Sea, Grass, Mountain, Sand, Volcano]
 }
 
-var InitSchoolCard = function() {
+const InitSchoolCard = function() {
 
     let Schoolbag = generateCardObject('schoolbag', 'assets/img/school/schoolbag.png', 'Schoolbag', 'Портфель')
 
@@ -176,7 +176,7 @@ var InitSchoolCard = function() {
     return [Schoolbag, Book, Copybook, Pencil, Ruler, Pen, Teacher, Lesson]
 }
 
-var wordsForStats = {
+const wordsForStats = {
     'Fruits': InitFruitsCard(),
     'Animals': InitAnimalCard(),
     'Food': InitFoodCard(),

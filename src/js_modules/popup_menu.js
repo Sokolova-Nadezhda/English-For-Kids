@@ -3,10 +3,10 @@ document.querySelector('.first-button').addEventListener('click', () => {
     document.querySelector('.animated-icon').classList.toggle('open');
 });
 
-let popupBg = document.querySelector('.popup_menu_wrapper'); // Фон попап окна
-let popup = document.querySelector('.popup_menu'); // Само окно
-let openPopupButton = document.getElementsByTagName('nav')[0]; // Кнопка для показа окна
-let closePopupButton = document.getElementsByClassName('esc_button')[0]; // Кнопка для скрытия окна
+const popupBg = document.querySelector('.popup_menu_wrapper'); // Фон попап окна
+const popup = document.querySelector('.popup_menu'); // Само окно
+const openPopupButton = document.getElementsByTagName('nav')[0]; // Кнопка для показа окна
+const closePopupButton = document.getElementsByClassName('esc_button')[0]; // Кнопка для скрытия окна
 
 openPopupButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -14,6 +14,8 @@ openPopupButton.addEventListener('click', (e) => {
     popup.classList.add('active_popup');
     popup.classList.add('show_animation');
     popup.classList.remove('hide_animation');
+
+    popup.insertBefore(openPopupButton, document.getElementsByClassName('category_nav')[0]);
 
     closePopupButton.classList.add('show_animation');
     closePopupButton.classList.remove('hide_animation');
@@ -35,7 +37,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-let selectedNav = document.querySelector('.category_nav.active');
+const selectedNav = document.querySelector('.category_nav.active');
 
 popup.onclick = function(e) {
     let nav_elem = e.target.closest('.category_nav'); 
@@ -62,10 +64,11 @@ function removeActive() {  // Функция для снятия активны�
     popup.classList.remove('show_animation');
     closePopupButton.style.display = 'none';
 
+    esc_button_container.insertBefore(openPopupButton, undefined);
+
     closePopupButton.classList.remove('show_animation');
-    let icon_open = document.getElementsByClassName('animated-icon open')[0];
+    const icon_open = document.getElementsByClassName('animated-icon open')[0];
     if (icon_open) {
         icon_open.classList.remove('open');
     }
 }
-

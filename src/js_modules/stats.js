@@ -8,7 +8,7 @@ var generateStatsRow = function() {
     for (let category in wordsForStats) {
         for (let word of wordsForStats[category]) {
 
-            let tableRowTemplate = document.createElement('TR');
+            const tableRowTemplate = document.createElement('TR');
             tableRowTemplate.innerHTML = `
                             <td scope='row' class='stats_categories'></td>
                             <td class='stats_words'></td>
@@ -35,7 +35,7 @@ var generateStatsRow = function() {
     }  
 }
 
-var sortTable = function(arr_rows, th_number) {
+const sortTable = function(arr_rows, th_number) {
 
     let th_number_index = th_number.cellIndex;
     
@@ -56,7 +56,7 @@ var sortTable = function(arr_rows, th_number) {
     document.querySelector('table').tBodies[0].append(...arr_rows);
 }
 
-let stats_button = document.getElementsByClassName('btn_stats')[0];
+const stats_button = document.getElementsByClassName('btn_stats')[0];
 
 stats_button.addEventListener('click', () => {
 
@@ -74,14 +74,14 @@ stats_button.addEventListener('click', () => {
 
     stats_button.setAttribute('disabled', true);
 
-    let stat_buttons = document.createElement('DIV');
+    const stat_buttons = document.createElement('DIV');
     stat_buttons.setAttribute('class', 'stats_buttons');
     stat_buttons.innerHTML = `
                     <button id='difficult_words' data-tooltip="Words with < 25% accuracy">Repeat difficult words</button>
                     <button id='reset'>Reset</button>`
     document.getElementsByTagName('main')[0].prepend(stat_buttons);
 
-    var cardsContainer = document.getElementsByClassName('cards_container')[0];
+    const cardsContainer = document.getElementsByClassName('cards_container')[0];
 
     cardsContainer.innerHTML = `
                     <div class='table_wrapper'>
@@ -166,5 +166,3 @@ stats_button.addEventListener('click', () => {
         createCards(difficultWordsArray);
     }
 })
-
-

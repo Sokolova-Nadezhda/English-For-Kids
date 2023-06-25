@@ -9,7 +9,7 @@ module.exports = {
 
   output: {
     filename: 'bundle.js', // Имя выходного файла сборки
-    path: path.resolve(__dirname, './'), // Путь для выходного файла сборки
+    path: path.resolve(__dirname, './dist'), // Путь для выходного файла сборки
   },
 
   module: {
@@ -33,14 +33,14 @@ module.exports = {
 
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, './assets') },
+        { from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, './dist/assets') },
       ]
     }),
   ],
 
   devServer: {
     static: {
-      directory: path.join(__dirname, './'), // Каталог для статики
+      directory: path.join(__dirname, './dist'), // Каталог для статики
     },
     open: true, // Автоматически открывать браузер
   },

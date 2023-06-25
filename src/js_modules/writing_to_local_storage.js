@@ -1,13 +1,13 @@
 import {statsStorage} from './vars.js';
 import { wordsForStats } from './init_word_cards.js';
 
-export var writingToLocalStorage = function(word_name, column_name) {
+export const writingToLocalStorage = function(word_name, column_name) {
     let key_storage = `${word_name}.${column_name}`;
     let value = statsStorage.getItem(key_storage);
     statsStorage.setItem(key_storage, Number(value) + 1);
 }
 
-export var initStatsStorage = function () {
+export const initStatsStorage = function () {
     for (let category in wordsForStats) {
         for (let word of wordsForStats[category]) {
             let key_storage_correct = `${word.name}.correct`;

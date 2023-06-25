@@ -4,8 +4,8 @@ import { cardsContainer, enVoice} from './vars.js';
 
 // создание карточки
 
-var generateWordsCardNode = function(id, img, name, translate){
-    let cardTemplate = document.getElementById('category_card_template');
+const generateWordsCardNode = function(id, img, name, translate){
+    const cardTemplate = document.getElementById('category_card_template');
     let newCard = cardTemplate.cloneNode(true);
 
     newCard.setAttribute('class', 'category_card flipper');
@@ -62,7 +62,7 @@ export function createCards(arr) {
             flipContainer.appendChild(currentCardsNode);
         }
     
-        let rotateButtons = document.querySelectorAll('.flip_button');
+        const rotateButtons = document.querySelectorAll('.flip_button');
         rotateButtons.forEach((button) => {
             button.addEventListener('click', (e) => {
     
@@ -71,11 +71,11 @@ export function createCards(arr) {
             })
         });
     
-        let frontSides = document.querySelectorAll('.front');
+        const frontSides = document.querySelectorAll('.front');
 
         frontSides.forEach((card) => {
 
-            let VoicingWords = function (e) {
+            const VoicingWords = function (e) {
                 let text = e.target.closest('.front').getElementsByClassName('category_name')[0].innerHTML;
                 let utterance = new SpeechSynthesisUtterance(text);
 
@@ -98,7 +98,7 @@ export function createCards(arr) {
 
         })
 
-        let backSides = document.querySelectorAll('.back');
+        const backSides = document.querySelectorAll('.back');
         backSides.forEach((card) => {
             card.addEventListener('mouseleave', (e) => {
                 e.target.closest('.flipper').style.transform = '';

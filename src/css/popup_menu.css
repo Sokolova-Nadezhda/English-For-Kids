@@ -68,6 +68,11 @@
 
 }
 
+.popup_menu .container-fluid {
+    display: flex;
+    padding-left: 40px;
+}
+
 .category_nav {
     text-decoration: none;
     display: flex;

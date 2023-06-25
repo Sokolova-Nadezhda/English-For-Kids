@@ -1,5 +1,5 @@
 
-import { switcher as switcher, cardsContainer } from './vars.js';
+import { switcher as switcher } from './vars.js';
 import { initStatsStorage } from './writing_to_local_storage.js';
 import { writingToLocalStorage } from './writing_to_local_storage.js'
 
@@ -7,7 +7,7 @@ switcher.addEventListener('click', () => {
     switcher.classList.toggle('train');
     switcher.classList.toggle('play');
 
-    let categoryCards = document.querySelectorAll('.category_card.flipper');
+    const categoryCards = document.querySelectorAll('.category_card.flipper');
 
     categoryCards.forEach((card) => {
         card.getElementsByClassName('category_name')[0].classList.toggle('play_card');
@@ -15,7 +15,7 @@ switcher.addEventListener('click', () => {
         card.getElementsByClassName('image')[0].classList.toggle('play_image');
     })
 
-    let buttons = document.getElementsByClassName('buttons_and_markers_wrapper')[0];
+    const buttons = document.getElementsByClassName('buttons_and_markers_wrapper')[0];
     buttons.classList.toggle('block');
 
     if ((switcher.classList.contains('play'))&&(!repeat.hasAttribute('disabled'))) {
@@ -30,8 +30,8 @@ switcher.addEventListener('click', () => {
 
     start.addEventListener('click', () => {
 
-        let cards = document.querySelectorAll('.front');
-        let cardsNames = document.querySelectorAll('.category_name');
+        const cards = document.querySelectorAll('.front');
+        const cardsNames = document.querySelectorAll('.category_name');
         let wordsForGame = [];
         let word = '';
 
@@ -97,8 +97,8 @@ switcher.addEventListener('click', () => {
 
 
 
-var VoicingWords = function (arrOrWord) {
-    let reactivate = window.speechSynthesis.getVoices();
+const VoicingWords = function (arrOrWord) {
+    const reactivate = window.speechSynthesis.getVoices();
     let enVoice = reactivate.filter(function (elem) { return elem.lang == "en-US" })[0];
     let word;
 
@@ -119,9 +119,9 @@ var VoicingWords = function (arrOrWord) {
     return word;
 }
 
-var createMarker = function (resultGame) {
+const createMarker = function (resultGame) {
 
-    let markerTemplate = document.createElement('IMG');
+    const markerTemplate = document.createElement('IMG');
     let marker = markerTemplate.cloneNode(true);
     let fail;
 
@@ -142,8 +142,3 @@ var createMarker = function (resultGame) {
 }
 
 initStatsStorage();
-
-
-
-
-

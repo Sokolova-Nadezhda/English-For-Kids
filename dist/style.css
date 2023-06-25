@@ -41,8 +41,6 @@ body {
     width: 100%;
 }
 
-
-
 /*!*******************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!./css/header.css ***!
   \*******************************************************************/
@@ -286,8 +284,6 @@ header h1 a:hover {
     display: none;
     cursor: pointer;
 }
-
-
 
 /*!*****************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!./css/main.css ***!
@@ -536,9 +532,6 @@ button {
     width: 500px;
 }
 
-
-
-
 /*!***********************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!./css/popup_menu.css ***!
   \***********************************************************************/
@@ -612,6 +605,11 @@ button {
 
 }
 
+.popup_menu .container-fluid {
+    display: flex;
+    padding-left: 40px;
+}
+
 .category_nav {
     text-decoration: none;
     display: flex;
@@ -651,6 +649,7 @@ button {
     width: 27px;
     height: 27px;
 }
+
 /*!******************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!./css/stats.css ***!
   \******************************************************************/
@@ -793,3 +792,4 @@ table th.sort_arrow_down::after {
         width: 300px;
     }
 }
+

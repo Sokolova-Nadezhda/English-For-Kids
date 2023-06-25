@@ -12,4 +12,3 @@ import './js_modules/popup_menu.js';
 import './js_modules/word_cards.js';
 import './js_modules/game_mode.js';
 import './js_modules/stats.js';
-

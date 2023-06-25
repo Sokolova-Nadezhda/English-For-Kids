@@ -3,7 +3,7 @@ import { cardsContainer } from "./vars.js";
 
 // данные для карточек с категориями
 
-var InitCategoryCard = function() {
+const InitCategoryCard = function() {
     let Fruits = {
         id: "fruits",
         img: 'assets/img/fruits.png',
@@ -57,8 +57,8 @@ var InitCategoryCard = function() {
 
 // создание карточки
 
-var generateCategoryCardNode = function(id, img, name){
-    let cardTemplate = document.getElementById('category_card_template');
+const generateCategoryCardNode = function(id, img, name){
+    const cardTemplate = document.getElementById('category_card_template');
     let newCard = cardTemplate.cloneNode(true);
 
     newCard.getElementsByTagName('img')[0].src = img;
@@ -87,6 +87,3 @@ for (let i = 0; i < cardsNumber; i++) {
     let currentCardsNode = generateCategoryCardNode(currentCards.id, currentCards.img, currentCards.name);
     cardsContainer.appendChild(currentCardsNode);
 }
-
-
-
