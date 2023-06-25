@@ -1,0 +1,50 @@
+
+@media (max-width: 799px) {
+
+    .wrapper {
+        padding: 0 40px;
+        margin: 50px auto
+    }
+
+    header {
+        flex-direction: column;
+        align-content: center;
+        gap: 20px;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+    .btn_stats {
+        margin: 0;
+    }
+
+    .category_nav {
+        align-self: flex-start !important;
+        margin-left: 20px;
+    }
+
+    .cards_container {
+        align-content: center;
+    }
+
+    .buttons_and_markers { 
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .buttons_container { 
+        align-self: center;
+    }
+    
+    #stats_markers {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #end_game {            
+        height: 300px;
+        width: 300px;
+    }
+}

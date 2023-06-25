@@ -1,0 +1,34 @@
+*, *:after, *:before { 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: .3s ease-in-out;
+    /*плавность переходов для всех элементов страницы*/
+} 
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    width: 100%;
+    margin:auto;
+    height: 100%;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    max-width: 1349px;
+    padding: 0 80px;
+    margin: 40px auto;
+    width: 100%;
+}
